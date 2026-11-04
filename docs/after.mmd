@@ -1,0 +1,27 @@
+classDiagram
+direction TB
+class Main
+class StudentRecord {
+  -Map~Course, Integer~ record
+  -Strategy strategy
+  +StudentRecord(String id, String name, Strategy strategy)
+  +setStrategy(Strategy strategy) void
+  +computeAverage() double
+}
+class Course {
+  -int ects
+  +getEcts() int
+}
+class Strategy {
+  <<interface>>
+  +calculateAverage(Map~Course, Integer~ record) double
+}
+class StrategyArithmetic
+class StrategyWeighted
+Main ..> StudentRecord : uses
+Main ..> StrategyArithmetic : creates
+Main ..> StrategyWeighted : creates
+StudentRecord "1" --> "1" Strategy : delegates
+StudentRecord "1" --> "0..*" Course : record keys
+StrategyArithmetic ..|> Strategy
+StrategyWeighted ..|> Strategy

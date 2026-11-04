@@ -1,0 +1,20 @@
+classDiagram
+direction LR
+class Main {
+  +main(String[] args)$ void
+}
+class StudentRecord {
+  -String studentId
+  -String studentName
+  -Map~Course, Integer~ record
+  +computeAverage() double
+  +importFromFile(String filename) void
+  +toString() String
+}
+class Course {
+  -String id
+  -int ects
+  +getEcts() int
+}
+Main ..> StudentRecord : creates and uses
+StudentRecord "1" --> "0..*" Course : record keys
