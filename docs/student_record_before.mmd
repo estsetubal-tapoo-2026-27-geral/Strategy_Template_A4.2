@@ -1,0 +1,21 @@
+classDiagram
+direction LR
+class Main {
+  +main(args)
+}
+class StudentRecord {
+  -studentId: String
+  -studentName: String
+  -record: Map~Course, Integer~
+  +computeAverage() double
+  +importFromFile(filename)
+  +toString() String
+}
+class Course {
+  -id: String
+  -ects: int
+  +getEcts() int
+}
+Main ..> StudentRecord : uses
+StudentRecord "1" --> "0..*" Course : record keys
+note "StudentRecord contains the arithmetic algorithm."

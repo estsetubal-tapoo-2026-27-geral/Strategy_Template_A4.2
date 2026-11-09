@@ -1,0 +1,26 @@
+classDiagram
+direction TB
+class Main
+class StudentRecord {
+  -record: Map~Course, Integer~
+  -strategy: Strategy
+  +setStrategy(strategy) void
+  +computeAverage() double
+}
+class Course {
+  -ects: int
+  +getEcts() int
+}
+class Strategy {
+  <<interface>>
+  +calculateAverage(Map~Course, Integer~) double
+}
+class StrategyArithmetic
+class StrategyWeighted
+Main ..> StudentRecord : uses
+StudentRecord "1" --> "0..*" Course : record keys
+StudentRecord --> Strategy : strategy [1] / delegates
+StrategyArithmetic ..|> Strategy
+StrategyWeighted ..|> Strategy
+Main ..> StrategyArithmetic : creates
+Main ..> StrategyWeighted : creates

@@ -13,10 +13,6 @@ aritmética**, diretamente em `StudentRecord.computeAverage()`.
 O padrão Strategy ainda não está implementado. A interface e as classes das
 estratégias devem ser criadas durante a atividade.
 
-Baseado no [projeto de referência](https://github.com/estsetubal-pa/Strategy_Template)
-(o endereço `JavaPatterns_Strategy` redireciona para este repositório), na revisão
-`42712522083c3cfb53ed6db36d6b1838f6de3ce8`.
-
 ## Objetivos
 
 - Identificar o comportamento que varia e separá-lo dos restantes dados e operações.
