@@ -65,7 +65,7 @@ adicionado um `if` ou `switch` nesta classe para cada novo critério.
 
 ### Estrutura pretendida
 
-![Diagrama da aplicação do padrão Strategy](docs/student_record_strategy.svg)
+![Diagrama da aplicação do padrão Strategy](docs/student_record_strategy.png)
 
 O diagrama descreve a estrutura a implementar. As operações de importação e
 listagem e alguns atributos foram omitidos para destacar o padrão.
